@@ -47,7 +47,7 @@ formulario.addEventListener("submit", (event) => {
 fetch("https://jsonplaceholder.typicode.com/users").then(
     (response) => {
         // esperar la respusta del servicio y la vamos a procesar
-        console.log(response)
+        console.log("response" + response)
         return response.json();
     }
 ).then(
