@@ -44,7 +44,7 @@ formulario.addEventListener("submit", (event) => {
 
 
 // promesas promise
-fetch("https://jsonplaceholder.typicode.com/users").then(
+fetch("http://localhost:3001/users").then(
     (response) => {
         // esperar la respusta del servicio y la vamos a procesar
         console.log(response)
@@ -58,7 +58,7 @@ fetch("https://jsonplaceholder.typicode.com/users").then(
         const mi_lista = document.getElementById("lista-usuarios")
 
 
-        data.forEach(element => {
+        data['users'].forEach(element => {
             const li = document.createElement("li");
 
             li.textContent = ` nombre : ${element.name} - username: ${element.username}`;
@@ -72,7 +72,7 @@ fetch("https://jsonplaceholder.typicode.com/users").then(
 // async - await
 
 async function getUPost() {
-    const respose = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const respose = await fetch("http://localhost:3001/post");
     const dataJson = await respose.json();
 
     console.log(dataJson)
