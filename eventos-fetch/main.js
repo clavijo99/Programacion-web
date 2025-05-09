@@ -54,17 +54,43 @@ fetch("https://jsonplaceholder.typicode.com/users").then(
 ).then(
     (data) => {
         console.log(data)
+
+        const mi_lista = document.getElementById("lista-usuarios")
+
+
+        data.forEach(element => {
+            const li = document.createElement("li");
+
+            li.textContent = ` nombre : ${element.name} - username: ${element.username}`;
+
+            mi_lista.appendChild(li)
+
+        });
     }
 );
 
 // async - await
 
-async function getUSers() {
+async function getUPost() {
     const respose = await fetch("https://jsonplaceholder.typicode.com/posts");
     const dataJson = await respose.json();
-    
+
     console.log(dataJson)
+
+    const listado_post = document.getElementById("post")
+
+    dataJson.forEach( element => {
+
+        const my_post = document.createElement("div");
+
+        my_post.innerHTML =  `<div  class="post" >
+        <h3>${element.title}</h3>
+        <p>${element.body}</p>
+    </div>`;
+
+    listado_post.appendChild(my_post)
+    } );
 }
 
-getUSers();
+getUPost();
 
