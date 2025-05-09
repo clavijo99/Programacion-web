@@ -48,6 +48,7 @@ fetch("https://jsonplaceholder.typicode.com/users").then(
     (response) => {
         // esperar la respusta del servicio y la vamos a procesar
         console.log(response)
+        console.log()
         return response.json();
     }
 ).then(
